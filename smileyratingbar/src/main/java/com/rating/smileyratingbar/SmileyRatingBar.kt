@@ -71,6 +71,12 @@ class SmileyRatingBar : LinearLayout, RatingClickListener {
         init()
     }
 
+    /**
+     * get current rating value
+     * @return Integer
+     */
+    fun getRating(): Int = oldRating.getRating() + 1
+
     private fun init() {
         orientation = LinearLayout.HORIZONTAL
         layoutDirection = if (Utils.isRTL()) View.LAYOUT_DIRECTION_RTL else View.LAYOUT_DIRECTION_LTR
