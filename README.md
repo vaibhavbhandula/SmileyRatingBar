@@ -4,6 +4,8 @@ SmileyRatingBar
 
 Smiley Rating Bar for Android
 
+![](https://imgflip.com/gif/2svvua)
+
 Download
 --------
 
@@ -49,6 +51,8 @@ To get rating for the emoji
 ```kotlin
 smiley_rating?.setRatingSelectListener(this)
 ```
+
+There is an example which shows the usage
 
 License
 -------
