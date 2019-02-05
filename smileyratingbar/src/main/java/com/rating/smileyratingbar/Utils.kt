@@ -1,4 +1,4 @@
-package com.vaibhav.ratingbar
+package com.rating.smileyratingbar
 
 import android.text.TextUtils
 import android.view.View

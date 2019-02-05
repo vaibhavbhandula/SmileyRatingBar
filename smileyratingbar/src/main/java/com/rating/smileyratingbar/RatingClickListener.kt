@@ -1,4 +1,4 @@
-package com.vaibhav.ratingbar
+package com.rating.smileyratingbar
 
 /**
  * @author Vaibhav Bhandula on 05/02/19.

@@ -17,7 +17,7 @@ ext {
     bintrayRepo = 'Maven'
     bintrayName = 'SmileyRatingBar'
 
-    publishedGroupId = 'com.vaibhav.ratingbar'
+    publishedGroupId = 'com.rating.smileyratingbar'
     libraryName = 'smileyratingbar'
     artifact = 'smileyratingbar'
 

@@ -4,8 +4,8 @@ import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import com.vaibhav.ratingbar.RatingSelectListener
-import com.vaibhav.ratingbar.SmileyRatingBar
+import com.rating.smileyratingbar.RatingSelectListener
+import com.rating.smileyratingbar.SmileyRatingBar
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
