@@ -4,7 +4,7 @@ SmileyRatingBar
 
 Smiley Rating Bar for Android
 
-![](https://imgflip.com/gif/2svvua)
+![](rating.gif)
 
 Download
 --------
