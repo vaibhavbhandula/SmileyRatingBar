@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity(), RatingSelectListener {
         smiley_rating?.setNameForEmoji(SmileyRatingBar.Rating.GOOD, "good")
         smiley_rating?.setNameForEmoji(SmileyRatingBar.Rating.BAD, "bad")
         smiley_rating?.setTypeface(Typeface.SERIF)
+        Log.v("current_rating", "" + smiley_rating?.getRating())
     }
 
     override fun ratingSelected(rating: Int) {

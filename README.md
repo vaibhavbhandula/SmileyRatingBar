@@ -49,6 +49,11 @@ smiley_rating?.setTypeface(Typeface.SERIF)
 
 To get rating for the emoji
 ```kotlin
+smiley_rating?.getRating()
+```
+
+To listen to rating change
+```kotlin
 smiley_rating?.setRatingSelectListener(this)
 ```
 
