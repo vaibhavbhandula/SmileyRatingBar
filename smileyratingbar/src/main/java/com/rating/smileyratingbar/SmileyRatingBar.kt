@@ -85,6 +85,7 @@ class SmileyRatingBar : LinearLayout, RatingClickListener {
 
     private fun setUpSmileys() {
         removeAllViews()
+        ratingList.clear()
         var ratingEmoji = RatingEmoji(context)
         ratingEmoji.setRatingEmoji(Rating.TERRIBLE, R.drawable.terrible_selected, R.drawable.terrible_unselected)
         ratingEmoji.setRatingSelectListener(this)
