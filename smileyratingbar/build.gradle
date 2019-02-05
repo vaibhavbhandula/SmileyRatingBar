@@ -11,7 +11,7 @@ def devEmailExt = projects.properties['developer.email']
 //versioning
 ext.versionMajor = 1
 ext.versionMinor = 0
-ext.versionPatch = 1
+ext.versionPatch = 2
 
 ext {
     bintrayRepo = 'Maven'
