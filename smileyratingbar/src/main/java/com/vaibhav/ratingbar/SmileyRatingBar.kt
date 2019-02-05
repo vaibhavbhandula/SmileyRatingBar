@@ -11,6 +11,9 @@ import android.widget.LinearLayout
  */
 class SmileyRatingBar : LinearLayout, RatingClickListener {
 
+    /**
+     * Rating Enum
+     */
     enum class Rating(private val rating: Int) {
         TERRIBLE(0),
         BAD(1),
@@ -39,10 +42,19 @@ class SmileyRatingBar : LinearLayout, RatingClickListener {
         init()
     }
 
+    /**
+     * set Rating Listener
+     * @param ratingSelectListener RatingSelectListener
+     */
     fun setRatingSelectListener(ratingSelectListener: RatingSelectListener?) {
         this.ratingSelectListener = ratingSelectListener
     }
 
+    /**
+     * setName for the emoji
+     * @param emoji Rating Emoji
+     * @param text Name for the Emoji
+     */
     fun setNameForEmoji(emoji: Rating, text: String?) {
         if (emoji == Rating.NONE || emoji.getRating() < 0 || emoji.getRating() >= ratingList.size) {
             return
@@ -50,6 +62,10 @@ class SmileyRatingBar : LinearLayout, RatingClickListener {
         ratingList[emoji.getRating()].setEmojiText(text)
     }
 
+    /**
+     * set Typeface for the font
+     * @param typeface Typeface
+     */
     fun setTypeface(typeface: Typeface?) {
         RatingEmoji.setTypeFace(typeface ?: Typeface.DEFAULT)
         init()
