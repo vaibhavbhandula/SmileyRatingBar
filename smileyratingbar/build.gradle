@@ -2,11 +2,40 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 def appConfig = rootProject.ext
+def siteUrlExt = projects.properties['url.siteUrl']
+def gitUrlExt = projects.properties['url.gitUrl']
+def devIdExt = projects.properties['developer.id']
+def devNameExt = projects.properties['developer.name']
+def devEmailExt = projects.properties['developer.email']
 
 //versioning
 ext.versionMajor = 1
 ext.versionMinor = 0
 ext.versionPatch = 0
+
+ext {
+    bintrayRepo = 'Maven'
+    bintrayName = 'SmileyRatingBar'
+
+    publishedGroupId = 'com.noonEdu.nAnalytics'
+    libraryName = 'smileyratingbar'
+    artifact = 'smileyratingbar'
+
+    libraryDescription = 'Smiley Rating Bar for Android'
+
+    siteUrl = siteUrlExt
+    gitUrl = gitUrlExt
+
+    libraryVersion = generateVersionName()
+
+    developerId = devIdExt
+    developerName = devNameExt
+    developerEmail = devEmailExt
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
 
 android {
     compileSdkVersion appConfig.compileSdkVersion
@@ -42,3 +71,6 @@ private Integer generateVersionCode() {
 private String generateVersionName() {
     return "${ext.versionMajor}.${ext.versionMinor}.${ext.versionPatch}"
 }
+
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
