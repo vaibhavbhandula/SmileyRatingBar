@@ -14,13 +14,13 @@ Maven:
 <dependency>
     <groupId>com.rating.smileyratingbar</groupId>
     <artifactId>smileyratingbar</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <type>pom</type>
 </dependency>
 ```
 or Gradle:
 ```groovy
-implementation 'com.rating.smileyratingbar:smileyratingbar:1.0.0'
+implementation 'com.rating.smileyratingbar:smileyratingbar:1.0.1'
 ```
 Usage
 -----
