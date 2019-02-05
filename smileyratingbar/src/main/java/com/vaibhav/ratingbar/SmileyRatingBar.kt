@@ -1,6 +1,7 @@
 package com.vaibhav.ratingbar
 
 import android.content.Context
+import android.graphics.Typeface
 import android.util.AttributeSet
 import android.view.View
 import android.widget.LinearLayout
@@ -10,6 +11,9 @@ import android.widget.LinearLayout
  */
 class SmileyRatingBar : LinearLayout, RatingClickListener {
 
+    /**
+     * Rating Enum
+     */
     enum class Rating(private val rating: Int) {
         TERRIBLE(0),
         BAD(1),
@@ -38,8 +42,33 @@ class SmileyRatingBar : LinearLayout, RatingClickListener {
         init()
     }
 
+    /**
+     * set Rating Listener
+     * @param ratingSelectListener RatingSelectListener
+     */
     fun setRatingSelectListener(ratingSelectListener: RatingSelectListener?) {
         this.ratingSelectListener = ratingSelectListener
+    }
+
+    /**
+     * setName for the emoji
+     * @param emoji Rating Emoji
+     * @param text Name for the Emoji
+     */
+    fun setNameForEmoji(emoji: Rating, text: String?) {
+        if (emoji == Rating.NONE || emoji.getRating() < 0 || emoji.getRating() >= ratingList.size) {
+            return
+        }
+        ratingList[emoji.getRating()].setEmojiText(text)
+    }
+
+    /**
+     * set Typeface for the font
+     * @param typeface Typeface
+     */
+    fun setTypeface(typeface: Typeface?) {
+        RatingEmoji.setTypeFace(typeface ?: Typeface.DEFAULT)
+        init()
     }
 
     private fun init() {
@@ -49,24 +78,25 @@ class SmileyRatingBar : LinearLayout, RatingClickListener {
     }
 
     private fun setUpSmileys() {
+        removeAllViews()
         var ratingEmoji = RatingEmoji(context)
-        ratingEmoji.setRatingEmoji(Rating.TERRIBLE, "", R.drawable.terrible_selected, R.drawable.terrible_unselected)
+        ratingEmoji.setRatingEmoji(Rating.TERRIBLE, R.drawable.terrible_selected, R.drawable.terrible_unselected)
         ratingEmoji.setRatingSelectListener(this)
         ratingList.add(ratingEmoji)
         ratingEmoji = RatingEmoji(context)
-        ratingEmoji.setRatingEmoji(Rating.BAD, "", R.drawable.bad_selected, R.drawable.bad_unselected)
+        ratingEmoji.setRatingEmoji(Rating.BAD, R.drawable.bad_selected, R.drawable.bad_unselected)
         ratingEmoji.setRatingSelectListener(this)
         ratingList.add(ratingEmoji)
         ratingEmoji = RatingEmoji(context)
-        ratingEmoji.setRatingEmoji(Rating.OKAY, "", R.drawable.ok_selected, R.drawable.ok_unselected)
+        ratingEmoji.setRatingEmoji(Rating.OKAY, R.drawable.ok_selected, R.drawable.ok_unselected)
         ratingEmoji.setRatingSelectListener(this)
         ratingList.add(ratingEmoji)
         ratingEmoji = RatingEmoji(context)
-        ratingEmoji.setRatingEmoji(Rating.GOOD, "", R.drawable.good_selected, R.drawable.good_unselected)
+        ratingEmoji.setRatingEmoji(Rating.GOOD, R.drawable.good_selected, R.drawable.good_unselected)
         ratingEmoji.setRatingSelectListener(this)
         ratingList.add(ratingEmoji)
         ratingEmoji = RatingEmoji(context)
-        ratingEmoji.setRatingEmoji(Rating.GREAT, "", R.drawable.great_selected, R.drawable.great_unselected)
+        ratingEmoji.setRatingEmoji(Rating.GREAT, R.drawable.great_selected, R.drawable.great_unselected)
         ratingEmoji.setRatingSelectListener(this)
         ratingList.add(ratingEmoji)
         ratingList.forEach { addView(it) }

@@ -1,6 +1,7 @@
 package com.vaibhav.ratingbar
 
 import android.content.Context
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat
@@ -59,6 +60,7 @@ internal class RatingEmoji : ConstraintLayout {
         tvText = findViewById(R.id.tv_text)
         ivEmoji = findViewById(R.id.iv_emoji)
         tvText?.setTextColor(lightColor)
+        tvText?.typeface = typeface
         val params: LayoutParams? = ivEmoji?.layoutParams as LayoutParams?
         params?.width = unselectedImageSize
         params?.height = unselectedImageSize
@@ -66,12 +68,15 @@ internal class RatingEmoji : ConstraintLayout {
         setOnClickListener { ratingSelected() }
     }
 
-    internal fun setRatingEmoji(rating: SmileyRatingBar.Rating, text: String?, selectedEmoji: Int, unSelectedEmoji: Int) {
+    internal fun setRatingEmoji(rating: SmileyRatingBar.Rating, selectedEmoji: Int, unSelectedEmoji: Int) {
         this.rating = rating
         this.selectedEmoji = selectedEmoji
         this.unSelectedEmoji = unSelectedEmoji
-        tvText?.text = text ?: ""
         ivEmoji?.setImageDrawable(getDrawable(unSelectedEmoji))
+    }
+
+    internal fun setEmojiText(text: String?) {
+        tvText?.text = text ?: ""
     }
 
     internal fun selectRatingEmoji() {
@@ -101,4 +106,13 @@ internal class RatingEmoji : ConstraintLayout {
     }
 
     private fun getDrawable(resourceId: Int): Drawable? = AppCompatResources.getDrawable(context, resourceId)
+
+    companion object {
+
+        var typeface: Typeface = Typeface.DEFAULT
+
+        fun setTypeFace(typeface: Typeface) {
+            this.typeface = typeface
+        }
+    }
 }
