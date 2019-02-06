@@ -79,6 +79,10 @@ internal class RatingEmoji : ConstraintLayout {
         tvText?.text = text ?: ""
     }
 
+    internal fun changeTypeface() {
+        tvText?.typeface = typeface
+    }
+
     internal fun selectRatingEmoji() {
         tvText?.setTextColor(blackColor)
         ivEmoji?.setImageDrawable(getDrawable(selectedEmoji!!))

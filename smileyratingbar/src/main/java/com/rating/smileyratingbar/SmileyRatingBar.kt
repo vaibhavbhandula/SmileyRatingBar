@@ -68,7 +68,7 @@ class SmileyRatingBar : LinearLayout, RatingClickListener {
      */
     fun setTypeface(typeface: Typeface?) {
         RatingEmoji.setTypeFace(typeface ?: Typeface.DEFAULT)
-        init()
+        ratingList.forEach { it.changeTypeface() }
     }
 
     /**

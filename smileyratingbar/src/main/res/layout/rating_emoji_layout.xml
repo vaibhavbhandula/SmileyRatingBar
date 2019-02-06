@@ -5,10 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:paddingLeft="@dimen/size10"
-    android:paddingTop="@dimen/size20"
-    android:paddingRight="@dimen/size10"
-    android:paddingBottom="@dimen/size20">
+    android:padding="@dimen/size10">
 
     <ImageView
         android:id="@+id/iv_emoji"
